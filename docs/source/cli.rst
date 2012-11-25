@@ -8,8 +8,8 @@ circus-top
 ==========
 
 *circus-top* is a top-like console you can run to watch
-live your running Circus system. It will display the CPU, Memory
-usage and socket hits if you have some.
+your live running Circus system. It will display the CPU, Memory
+usage and socket hits if you have any.
 
 
 Example of output::
@@ -41,6 +41,6 @@ circusctl
 =========
 
 *circusctl* can be used to run any command listed in :ref:`commands` . For
-example, you can get a list of all the watchers, you can do ::
+example, to get a list of all the watchers you can use ::
 
     $ circusctl list

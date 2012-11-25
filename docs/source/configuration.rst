@@ -163,13 +163,13 @@ watcher:NAME - as many sections as you want
         Defaults to False.
 
     **max_retry**
-        The number of times we attempt to start a process, before
-        we abandon and stop the whole watcher. Defaults to 5.
+        The number of times circus attempts to start a process before
+        it quits and stops the whole watcher. Defaults to 5.
 
     **priority**
         Integer that defines a priority for the watcher. When the
-        Arbiter do some operations on all watchers, it will sort them
-        with this field, from the bigger number to the smallest.
+        Arbiter does some operations on all watchers, it will sort them
+        with this field, from the largest value to the smallest.
         Defaults to 0.
 
     **singleton**
@@ -182,8 +182,8 @@ watcher:NAME - as many sections as you want
         when the child process is forked. Defaults to False.
 
     **max_age**
-        If set then the process will be restarted sometime after max_age
-        seconds. This is useful when processes deal with pool of connectors:
+        If max_age is set then the process will be restarted sometime after max_age
+        seconds. This is useful when processes deal with a pool of connectors:
         restarting processes improves the load balancing. Defaults to being
         disabled.
 
@@ -230,8 +230,8 @@ socket:NAME - as many sections as you want
 
 
 Once a socket is created, the *${circus.sockets.NAME}* string can be used in the
-command (`cmd` or `args`) of a watcher. Circus will replace it by the FD value. The watcher must also
-have `use_sockets` set to `True` otherwise the socket will have been closed and
+command (`cmd` or `args`) of a watcher. Circus will replace *${circus.sockets.NAME}* with the FD value. The watcher must also
+have `use_sockets` set to `True` otherwise the socket will close and
 you will get errors when the watcher tries to use it.
 
 Example::
@@ -292,10 +292,10 @@ Example::
 Formating the commands and arguments with dynamic variables
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-As you may have seen, it is possible to pass some information that are computed
+As you may have seen, it is possible to pass some information that is computed
 dynamically when running the processes. Among other things, you can get the
 worker id (WID) and all the options that are passed to the :class:`Process`.
-Additionally, it is possible to access the options passed to the
+Additionally, it is possible to access the options that are passed to the
 :class:`Watcher` which instanciated the process.
 
 .. note::

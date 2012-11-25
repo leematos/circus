@@ -11,21 +11,20 @@ class Daemontats(Command):
        Get circusd stats
        =================
 
-       You can get at any time some statistics about circusd
-       with the dstat command.
+       Return statistics about the circusd process.
 
        ZMQ Message
        -----------
 
-       To get the circusd stats, simply run::
+       To get circusd stats, simply run::
 
             {
                 "command": "dstats"
             }
 
 
-       The response returns a mapping the property "infos"
-       containing some process informations::
+       The response returns a JSON object with the property "info"
+       containing information about the running process ::
 
             {
               "info": {

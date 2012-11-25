@@ -8,7 +8,7 @@ class AddWatcher(Command):
         Add a watcher
         =============
 
-        This command add a watcher dynamically to a arbiter.
+        This command adds a watcher dynamically to an arbiter.
 
         ZMQ Message
         -----------
@@ -32,9 +32,9 @@ class AddWatcher(Command):
         - args: array, arguments passed to the command (optional)
         - name: name of watcher
         - options: options of a watcher
-        - start: start the watcher after the creation
+        - start: start the watcher after it was created
 
-        The response return a status "ok".
+        The response returns a status "ok".
 
         Command line
         ------------
@@ -47,13 +47,13 @@ class AddWatcher(Command):
         +++++++
 
         - <name>: name of the watcher to create
-        - <cmd>: full command line to execute in a process
+        - <cmd>: full command to execute in a process
         - --start: start the watcher immediately
 
     """
 
     name = "add"
-    options = [('', 'start', False, "start immediately the watcher")]
+    options = [('', 'start', False, "start the watcher immediately")]
     properties = ['name', 'cmd']
 
     def message(self, *args, **opts):

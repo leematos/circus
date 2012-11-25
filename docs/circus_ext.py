@@ -8,11 +8,11 @@ _HEADER = """\
 Commands
 ########
 
-At the epicenter of circus lives the command systems.  *circusctl* is just a
-zeromq client, and if needed you can drive programmaticaly the Circus system by
+The heart of circus is the command system.  *circusctl* is just a
+zeromq client, and if needed you can programmatically drive the Circus system by
 writing your own zmq client.
 
-All messages are Json mappings.
+All messages are JSON mappings.
 
 For each command below, we provide a usage example with circusctl but also the
 input / output zmq messages.

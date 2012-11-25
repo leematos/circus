@@ -13,7 +13,7 @@ its python API.
 It shares some of the goals of `Supervisord <http://supervisord.org>`_,
 `BluePill <https://github.com/arya/bluepill>`_ and
 `Daemontools <http://cr.yp.to/daemontools.html>`_. If you are curious about
-what Circus brings compared to other projects, read :ref:`why`.
+what benefits Circus has compared to other projects, read :ref:`why`.
 
 Circus is designed using `ZeroMQ <http://www.zeromq.org/>`_. See :ref:`design` for more details.
 
@@ -65,7 +65,7 @@ The file is then run using *circusd*::
 
 
 Besides processes, Circus can also bind sockets. Since every process managed by
-Circus is a child of the main Circus daemon, that means any program that's
+Circus is a child of the main Circus daemon any program that's
 controlled by Circus can use those sockets.
 
 Running a socket is as simple as adding a *socket* section in the config file::
@@ -85,7 +85,7 @@ Controlling Circus
 
 Circus provides two command-line tools to manage your running daemon:
 
-- *circusctl*, a management console you can use it to perform
+- *circusctl*, a management console you can use to perform
   actions such as adding or removing :term:`workers`
 
 - *circus-top*, a top-like console you can use to display the memory and
@@ -94,8 +94,7 @@ Circus provides two command-line tools to manage your running daemon:
 To learn more about these, see :ref:`cli`
 
 
-Circus also offers a small web application that can connect to a
-running Circus daemon and let you monitor and interact with it.
+Circus also offers a small web application that allows you to monitor and interact with a running Circus daemon.
 
 Running the web application is as simple as adding an **httpd**
 option in the ini file::
@@ -140,19 +139,17 @@ To learn more about this, see :ref:`library`
 Extending Circus
 ----------------
 
-It's easy to extend Circus to create a more complex system, by listening to all
-the **circusd** events via its pub/sub channel, and driving it via commands.
+It's easy to extend Circus to create a more complex systems.  All **circusd** events are exposed via its pub/sub channel, and with this access you can pass the  **circusd** your commands.
 
-That's how the flapping feature works for instance: it listens to all the
-processes dying, measures how often it happens, and stops the incriminated
+This is how the flapping feature works. It listens to all the
+processes dying, measures how often it happens, and stops the offending
 watchers after too many restarts attempts.
 
 Circus comes with a plugin system to help you write such extensions, and
 a few built-in plugins you can reuse. See :ref:`plugins`.
 
-You can also have a more subtile startup and shutdown behavior by using the
-**hooks** system that will let you run arbitrary code before and after
-some processes are started or stopped. See :ref:`hooks`.
+You can also have a more subtle startup and shutdown behavior by using the
+**hooks** system that will let you run arbitrary code before and after processes are started or stopped. See :ref:`hooks`.
 
 
 More documentation

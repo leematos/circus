@@ -4,10 +4,10 @@ from circus.exc import ArgumentError
 
 class DecrProcess(Command):
     """\
-        Decrement the number of processes in a watcher
+        Decrement the number of processes for a watcher
         ==============================================
 
-        This comment decrement the number of processes in a watcher by -1.
+        This comment decrements the number of processes for a watcher by -1.
 
         ZMQ Message
         -----------
@@ -22,7 +22,7 @@ class DecrProcess(Command):
                 }
             }
 
-        The response return the number of processes in the 'numprocesses`
+        The response returns the number of processes in the 'numprocesses`
         property::
 
             { "status": "ok", "numprocesses": <n>, "time", "timestamp" }
